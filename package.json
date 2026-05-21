@@ -40,7 +40,7 @@
     "url": "https://den.dance/"
   },
   "license": "MIT",
-  "homepage": "https://den.dance/",
+  "homepage": "https://github.com/den-indance/google-trends-mcp#readme",
   "engines": {
     "node": ">=18.0.0"
   },
