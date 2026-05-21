@@ -1,6 +1,8 @@
 # Google Trends MCP
 
 [![npm](https://img.shields.io/npm/v/@den.dance/google-trends-mcp)](https://www.npmjs.com/package/@den.dance/google-trends-mcp)
+[![GitHub](https://img.shields.io/badge/GitHub-den--indance%2Fgoogle--trends--mcp-181717?logo=github)](https://github.com/den-indance/google-trends-mcp)
+[![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 The Google Trends MCP server that actually works under Google's anti-bot. Connect Claude to live Google Trends data — keyword interest, related queries, regional popularity.
 
