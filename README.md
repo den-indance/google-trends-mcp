@@ -6,7 +6,7 @@ The Google Trends MCP server that actually works under Google's anti-bot. Connec
 
 Most Google Trends MCP packages crash with `Unexpected token 'l'` the moment Google blocks them (which is often). Free public proxy lists don't help — we tested 64 proxies from a popular "high-quality" list and 0 worked. This one uses your own rotating proxy with auto-retry, so blocked requests transparently retry on a fresh IP.
 
-Built by [Denis Maleev](https://den.dance/).
+Built by [Denys Malieiev](https://den.dance/).
 
 ---
 
