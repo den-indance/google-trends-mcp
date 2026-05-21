@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.den-indance/google-trends-mcp",
-  "description": "Google Trends MCP server with proxy rotation, auto-retry on Google blocks, and tested setup for rotating residential proxies (Webshare, IPRoyal, Smartproxy).",
+  "description": "Google Trends MCP with proxy rotation, auto-retry on Google blocks, residential-proxy setup.",
   "repository": {
     "url": "https://github.com/den-indance/google-trends-mcp",
     "source": "github"
