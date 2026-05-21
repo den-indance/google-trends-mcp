@@ -1,0 +1,65 @@
+{
+  "name": "@den.dance/google-trends-mcp",
+  "version": "1.0.0",
+  "description": "Google Trends MCP server with proxy rotation, auto-retry on Google blocks, and tested setup for rotating residential proxies (Webshare, IPRoyal, Smartproxy).",
+  "type": "module",
+  "main": "./server.js",
+  "bin": {
+    "google-trends-mcp": "./server.js"
+  },
+  "files": [
+    "server.js",
+    "proxy-manager.js",
+    "trends-client.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "test": "vitest run tests/unit",
+    "test:watch": "vitest tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "vitest run tests/e2e",
+    "test:all": "npm test && RUN_INTEGRATION=1 npm run test:integration && RUN_E2E=1 npm run test:e2e",
+    "test:coverage": "vitest run tests/unit --coverage"
+  },
+  "keywords": [
+    "mcp",
+    "google-trends",
+    "claude",
+    "ai",
+    "llm",
+    "model-context-protocol",
+    "keyword-research",
+    "seo",
+    "trends",
+    "proxy"
+  ],
+  "author": {
+    "name": "Denys Malieiev",
+    "url": "https://den.dance/"
+  },
+  "license": "MIT",
+  "homepage": "https://den.dance/",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "google-trends-api": "^4.9.2",
+    "https-proxy-agent": "^7.0.0",
+    "socks-proxy-agent": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/den-indance/google-trends-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/den-indance/google-trends-mcp/issues"
+  },
+  "mcpName": "io.github.den-indance/google-trends-mcp",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.9",
+    "vitest": "^2.1.9"
+  }
+}

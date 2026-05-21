@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# proxy validation cache (machine-local, never publish)
+proxies.json
+
+# test artifacts
+coverage/
+.vitest/
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# env files (just in case — proxy creds should never be committed)
+.env
+.env.*
+!.env.example

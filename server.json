@@ -1,0 +1,50 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.den-indance/google-trends-mcp",
+  "description": "Google Trends MCP with proxy rotation, auto-retry on Google blocks, and tested proxy setup.",
+  "repository": {
+    "url": "https://github.com/den-indance/google-trends-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@den.dance/google-trends-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PROXY_URL",
+          "description": "Single rotating proxy endpoint (e.g. http://user:pass@gate.smartproxy.com:7000). Provider handles IP rotation.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "PROXY_LIST",
+          "description": "Comma-separated proxy list (http://user:pass@host:port,...). Validated on startup, bad ones auto-dropped.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "PROXY_LIST_FILE",
+          "description": "Path to a file with one proxy URL per line (# comments allowed). Validated on startup, re-read on proxy_refresh.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "PROXIES_ENABLED",
+          "description": "Set to false to disable proxy logic and use direct requests. Default: enabled.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
