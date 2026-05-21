@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./server.js",
   "bin": {
-    "google-trends-mcp": "./server.js"
+    "google-trends-mcp": "server.js"
   },
   "files": [
     "server.js",
