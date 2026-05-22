@@ -18,6 +18,7 @@
     "url": "https://github.com/den-indance/google-trends-mcp"
   },
   "license": "MIT",
+  "icon": "icon.png",
   "keywords": [
     "mcp",
     "google-trends",
