@@ -1,0 +1,85 @@
+{
+  "manifest_version": "0.3",
+  "name": "google-trends-mcp",
+  "display_name": "Google Trends MCP",
+  "version": "1.0.0",
+  "description": "Google Trends MCP with proxy rotation, auto-retry on Google blocks, and residential-proxy setup.",
+  "long_description": "Production-ready Google Trends MCP server with built-in defenses against Google's aggressive rate-limiting. Designed for keyword research and SEO work in long agent sessions where naïve Google Trends clients hit 429 after a few queries.\n\nWhat you get via the agent:\n• Trends API — `compare_keywords`, `get_interest_by_region`, `get_related_queries` for any term.\n• Proxy rotation — feed it a list of residential proxies (Webshare, IPRoyal, Smartproxy formats supported) and the server rotates per request, drops dead ones, and exposes a `proxy_refresh` tool to re-load the pool.\n• Auto-retry on block — Google's 429 / consent-page traps are retried on the next proxy automatically.\n• Direct mode — set `PROXIES_ENABLED=false` to skip the proxy layer entirely (small queries from a clean IP).\n\nProxies are configured via env vars (`PROXY_URL` single endpoint, `PROXY_LIST` comma-separated, or `PROXY_LIST_FILE` for a file with one URL per line). See the README for proxy provider recommendations, format examples, and the OSS → hosted → x402 roadmap.",
+  "author": {
+    "name": "Denys Malieiev",
+    "email": "denismaleev95@gmail.com",
+    "url": "https://den.dance/"
+  },
+  "homepage": "https://github.com/den-indance/google-trends-mcp#readme",
+  "documentation": "https://github.com/den-indance/google-trends-mcp#readme",
+  "support": "https://github.com/den-indance/google-trends-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/den-indance/google-trends-mcp"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "google-trends",
+    "claude",
+    "ai",
+    "llm",
+    "model-context-protocol",
+    "keyword-research",
+    "seo",
+    "trends",
+    "proxy"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server.js"],
+      "env": {
+        "PROXY_URL": "${user_config.proxy_url}",
+        "PROXY_LIST": "${user_config.proxy_list}",
+        "PROXY_LIST_FILE": "${user_config.proxy_list_file}",
+        "PROXIES_ENABLED": "${user_config.proxies_enabled}"
+      }
+    }
+  },
+  "user_config": {
+    "proxy_url": {
+      "type": "string",
+      "title": "Single rotating proxy endpoint",
+      "description": "e.g. http://user:pass@gate.smartproxy.com:7000 — the provider handles IP rotation.",
+      "required": false,
+      "sensitive": true
+    },
+    "proxy_list": {
+      "type": "string",
+      "title": "Comma-separated proxy list",
+      "description": "http://user:pass@host:port,http://user2:pass2@host2:port2,… — validated on startup, dead ones auto-dropped.",
+      "required": false,
+      "sensitive": true
+    },
+    "proxy_list_file": {
+      "type": "string",
+      "title": "Path to a proxy-list file",
+      "description": "File with one proxy URL per line (# comments allowed). Re-read on `proxy_refresh` tool call.",
+      "required": false,
+      "sensitive": false
+    },
+    "proxies_enabled": {
+      "type": "string",
+      "title": "Enable proxy layer",
+      "description": "Set to \"false\" to skip the proxy logic and use direct requests. Default: enabled.",
+      "default": "true",
+      "required": false,
+      "sensitive": false
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

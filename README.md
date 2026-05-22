@@ -1,6 +1,7 @@
 # Google Trends MCP
 
 [![npm](https://img.shields.io/npm/v/@den.dance/google-trends-mcp)](https://www.npmjs.com/package/@den.dance/google-trends-mcp)
+[![smithery badge](https://smithery.ai/badge/den-indance/google-trends-mcp)](https://smithery.ai/servers/den-indance/google-trends-mcp)
 [![GitHub](https://img.shields.io/badge/GitHub-den--indance%2Fgoogle--trends--mcp-181717?logo=github)](https://github.com/den-indance/google-trends-mcp)
 [![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
